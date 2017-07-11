@@ -12,7 +12,7 @@
   background-color: #3E8ACC;
   color: #fff;
   font-size: 30px;
-  font-family: sans-serif
+  font-family: sans-serif;
 }
 
 .wrapper .header .title {
@@ -56,4 +56,7 @@
   border: 1px solid #267BC5;
   border-radius: 3px;
   font-size: 15px;
+}
+input {
+  font-family: FontAwesome, sans-serif;
 }

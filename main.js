@@ -7,7 +7,7 @@ let formData = [
     "type": "text",
     "label": "First Name",
     "id": "user-first-name",
-    "icon": "fa-user",
+    "icon": "&#xf007;",
     "options": []
   },
   {
@@ -101,6 +101,7 @@ var createInput;
 var createSelect;
 var fontIcon;
 
+
 formData.forEach(function(formData){
   createInput = document.createElement('input');
   if (formData.type === 'select'){
@@ -119,16 +120,14 @@ formData.forEach(function(formData){
     })
     createSelect.placeholder = formData['label'];
     createSelect.id = formData['id'];
-    createSelect.icon = formData['icon'];
     createSelect.options = formData['options'];
     fields.appendChild(createSelect);
   }
   else {
     createInput = document.createElement('input');
     createInput.type = formData['type'];
-    createInput.placeholder = formData['icon'] + '; ' + formData['label'];
+    createInput.placeholder = formData['label'];
     createInput.id = formData['id'];
-    createInput.icon = formData['icon'];
     createInput.options = formData['options'];
     fields.appendChild(createInput);
   }
