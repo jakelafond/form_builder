@@ -91,10 +91,55 @@ let formData = [
   // Log the first object
   console.log( first );
   // Log the string "First Name"
+  console.log( first.type );
   console.log( first.label );
-} )();
+  console.log(first.id);
+  console.log(first.icon);
+  console.log(first.options);
+} )
+var createInput;
+var createSelect;
+var fontIcon;
+
+formData.forEach(function(formData){
+  createInput = document.createElement('input');
+  if (formData.type === 'select'){
+    createSelect = document.createElement('select');
+    createSelect.type = formData['type'];
+    var op2 = document.createElement('option')
+    op2.text = "Select language...";
+    op2.selected = 'selected';
+    createSelect.appendChild(op2);
+    formData.options.forEach(function(options, index){
+      console.log(formData.options);
+      var opt = document.createElement('option');
+      opt.value = formData.options[index]['value'];
+      opt.text = formData.options[index]['label'];
+      createSelect.appendChild(opt);
+    })
+    createSelect.placeholder = formData['label'];
+    createSelect.id = formData['id'];
+    createSelect.icon = formData['icon'];
+    createSelect.options = formData['options'];
+    fields.appendChild(createSelect);
+  }
+  else {
+    createInput = document.createElement('input');
+    createInput.type = formData['type'];
+    createInput.placeholder = formData['icon'] + '; ' + formData['label'];
+    createInput.id = formData['id'];
+    createInput.icon = formData['icon'];
+    createInput.options = formData['options'];
+    fields.appendChild(createInput);
+  }
+
+  if (formData['type'] === 'textarea') {
+      let inputVal = document.getElementById("user-comment");
+      createInput.style.height = "100px";
+      console.log(inputVal);
+    }
+})
+
 
 
 // -------- Your Code Goes Below this Line --------
-
-
